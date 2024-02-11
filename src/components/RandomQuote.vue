@@ -3,7 +3,7 @@
 <template>
   <main class="space-y-16 cursor-default">
     <section class="space-y-8">
-      <h3 class="text-center italic font-semibold leading-normal">
+      <h3 class="text-center italic font-semibold leading-normal font-pt-mono">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis tenetur ullam. Nemo quos, soluta mollitia labore
         quam libero dicta numquam quaerat ea sunt quidem modi enim! In, et nemo?
       </h3>

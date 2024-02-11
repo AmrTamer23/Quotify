@@ -65,6 +65,10 @@ export default {
           900: "#cbb3f2",
         },
       },
+      fontFamily: {
+        "pt-mono": ["PT Mono", "monospace"],
+        young: ["Young Serif", "serif"],
+      },
     },
   },
   plugins: [],
