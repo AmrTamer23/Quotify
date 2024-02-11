@@ -49,3 +49,7 @@ h6
 {
   @apply text-lg lg:text-xl;
 }
+
+button{
+  @apply flex gap-2 justify-center items-center bg-african_violet-500 hover:bg-african_violet-300 px-4 py-2 rounded-md hover:scale-110 transition-all duration-75 ease-in-out lg:text-lg;
+}
