@@ -7,9 +7,10 @@ import {
   GiPerspectiveDiceSixFacesThree,
   LaCopySolid,
   CoSave,
+  BiCheckLg,
 } from "oh-vue-icons/icons";
 
-addIcons(GiPerspectiveDiceSixFacesThree, LaCopySolid, CoSave);
+addIcons(GiPerspectiveDiceSixFacesThree, LaCopySolid, CoSave, BiCheckLg);
 
 const app = createApp(App);
 

@@ -3,8 +3,8 @@ import RandomQuote from './components/RandomQuote.vue';
 </script>
 
 <template>
-  <main class="px-10 lg:px-20 py-20 lg:min-h-screen flex flex-col items-center justify-center">
-    <h1 id="logo" class="font-bold select-none">
+  <main class="mx-10 lg:mx-20 my-20 lg:my-0 min-h-screen flex flex-col items-center justify-center">
+    <h1 id="logo" class="font-bold select-none pt-10">
       Quotify
     </h1>
 
