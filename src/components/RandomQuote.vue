@@ -3,6 +3,8 @@ import { ref, watch } from 'vue';
 import { Quote } from '../lib/types';
 import { getRandomQuote } from '../lib/api/random-quote';
 import { useClipboard } from '@vueuse/core'
+import Toaster from '@/components/ui/toast/Toaster.vue'
+import { useToast } from '@/components/ui/toast/use-toast'
 
 
 const quote = ref<Quote | null>(null);
@@ -21,8 +23,14 @@ watch(quote, () => {
 
 const { copy, copied } = useClipboard();
 
+const { toast } = useToast()
+
 const copyQuote = () => {
   copy(toBeCopied.value!)
+  toast({
+    title: 'Quote Copied!',
+    variant: 'default',
+  });
 }
 
 </script>
@@ -63,7 +71,7 @@ const copyQuote = () => {
           </span>
         </template>
       </button>
-      <Toast />
+      <Toaster />
     </div>
 
   </main>
