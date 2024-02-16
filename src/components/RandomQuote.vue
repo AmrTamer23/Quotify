@@ -1,29 +1,27 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { Quote } from '../lib/types';
 import { getRandomQuote } from '../lib/api/random-quote';
 import { useClipboard } from '@vueuse/core'
 import Toaster from '@/components/ui/toast/Toaster.vue'
 import { useToast } from '@/components/ui/toast/use-toast'
+import { useSavedQuotesStore } from '@/stores/savedQuotes'
 
 
 const quote = ref<Quote | null>(null);
-
-const refreshQuote = async () => {
-  quote.value = await getRandomQuote();
-};
-
-refreshQuote();
-
+const { copy, copied } = useClipboard();
 const toBeCopied = ref<string | null>(null);
+const savedQuotesStore = useSavedQuotesStore();
+const { toast } = useToast()
 
 watch(quote, () => {
   toBeCopied.value = `${quote.value?.content} - ${quote.value?.author}`;
 });
 
-const { copy, copied } = useClipboard();
 
-const { toast } = useToast()
+const refreshQuote = async () => {
+  quote.value = await getRandomQuote();
+};
+
 
 const copyQuote = () => {
   copy(toBeCopied.value!)
@@ -33,7 +31,20 @@ const copyQuote = () => {
   });
 }
 
+const saveQuote = (quote: Quote) => {
+  if (!savedQuotesStore.savedQuotes.find(q => q._id === quote._id))
+    savedQuotesStore.addQuote(quote);
+  toast({
+    title: 'Quote Saved!',
+    variant: 'default',
+  });
+}
+
+
+refreshQuote();
 </script>
+
+
 <template>
   <main v-if="quote" class="space-y-16 cursor-default">
     <section class="space-y-8 *:mx-auto px-10 min-h-[40vh]">
@@ -45,7 +56,7 @@ const copyQuote = () => {
       </div>
     </section>
     <div class="flex gap-4 justify-evenly w-2/4 mx-auto">
-      <button>
+      <button @click="saveQuote(quote)">
         <v-icon name="co-save" scale="2" />
         <span class="hidden lg:block">
           Save

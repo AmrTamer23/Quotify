@@ -1,4 +1,4 @@
-export type Quote = {
+type Quote = {
   _id: string;
   content: string;
   author: string;
