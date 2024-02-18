@@ -21,6 +21,28 @@ module.exports = {
       },
     },
     extend: {
+      backgroundColor: {
+        skin: {
+          base: "var(--background-color)",
+        },
+        card: {
+          base: "var(--card-color)",
+        },
+        button: {
+          base: "var(--button-color)",
+          hover: "var(--button-hover-color)",
+        },
+      },
+      textColor: {
+        skin: {
+          base: "var(--text-color)",
+          glow: "var(--text-glow)",
+          faded: "var(--text-muted)",
+        },
+        button: {
+          base: "var(--button-text-color)",
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

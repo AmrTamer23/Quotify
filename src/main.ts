@@ -10,6 +10,7 @@ import {
   CoSave,
   BiCheckLg,
   MdDeleteOutlined,
+  BiPalette,
 } from "oh-vue-icons/icons";
 import { routes } from "./lib/routes";
 
@@ -18,7 +19,8 @@ addIcons(
   LaCopySolid,
   CoSave,
   BiCheckLg,
-  MdDeleteOutlined
+  MdDeleteOutlined,
+  BiPalette
 );
 
 const router = createRouter({

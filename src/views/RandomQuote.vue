@@ -8,7 +8,7 @@ import { useSavedQuotesStore } from '@/stores/savedQuotes'
 
 
 const quote = ref<Quote | null>(null);
-const { copy, copied } = useClipboard();
+const { copy } = useClipboard();
 const toBeCopied = ref<string | null>(null);
 const savedQuotesStore = useSavedQuotesStore();
 const { toast } = useToast()
@@ -51,11 +51,11 @@ refreshQuote();
       <h3 class="text-center italic font-semibold leading-normal font-pt-mono">
         {{ quote.content }}
       </h3>
-      <div class="text-xl font-medium w-fit">
+      <div class="text-xl font-medium w-fit text-skin-faded">
         - {{ quote.author }}
       </div>
     </section>
-    <div class="flex gap-4 justify-evenly w-2/4 mx-auto">
+    <div class="flex gap-4 justify-evenly w-2/4 mx-auto *:text-button-base">
       <button @click="saveQuote(quote)">
         <v-icon name="co-save" scale="2" />
         <span class="hidden lg:block">
@@ -68,19 +68,11 @@ refreshQuote();
           Randomize
         </span>
       </button>
-      <button @click="copyQuote" :class="copied && 'bg-emerald-800'">
-        <template v-if="copied">
-          <v-icon name="bi-check-lg" scale="2" />
-          <span class="hidden lg:block">
-            Copied
-          </span>
-        </template>
-        <template v-else>
-          <v-icon name="la-copy-solid" scale="2" />
-          <span class="hidden lg:block">
-            Copy
-          </span>
-        </template>
+      <button @click="copyQuote">
+        <v-icon name="la-copy-solid" scale="2" />
+        <span class="hidden lg:block">
+          Copy
+        </span>
       </button>
       <Toaster />
     </div>

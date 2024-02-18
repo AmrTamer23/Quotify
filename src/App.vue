@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import ThemeChanger from '@/components/ThemeChanger.vue'
 const router = useRouter()
+
 </script>
 
 <template>
@@ -14,9 +16,15 @@ const router = useRouter()
       <RouterView />
     </div>
   </main>
-  <div v-if="router.currentRoute.value.path !== '/saved-quotes'" class="fixed bottom-2 right-2">
+  <div v-if="router.currentRoute.value.path !== '/saved-quotes'" class="fixed bottom-4 right-4">
     <RouterLink to="saved-quotes">
-      <v-icon name="co-save" scale="2" />
+      <button class="bg-transparent hover:bg-transparent">
+        <v-icon name="co-save" scale="2" />
+      </button>
+
     </RouterLink>
+  </div>
+  <div class="fixed top-4 right-4">
+    <ThemeChanger />
   </div>
 </template>

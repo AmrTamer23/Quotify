@@ -6,7 +6,7 @@
 
 html {
   box-sizing: border-box;
-  @apply bg-russian_violet-100 text-african_violet-900 font-young;
+  @apply bg-skin-base text-skin-base font-young;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -53,14 +53,17 @@ h6
 }
 
 button{
-  @apply flex gap-2 justify-center items-center bg-african_violet-200 hover:bg-african_violet-300 px-4 py-2 rounded-md hover:transform hover:scale-110 transition-all duration-75 ease-in-out lg:text-lg;
+  @apply flex gap-2 justify-center items-center bg-button-base hover:bg-button-hover px-4 py-2 rounded-md hover:transform hover:scale-110 transition-all duration-75 ease-in-out lg:text-lg;
 }
 
 #logo{
-  text-shadow: rgba(101,36,205,1) 0px 0px 45px;
+  text-shadow: var(--text-glow) 0px 0px 45px;
 }
  
 @layer base {
+  * {
+    @apply border-border;
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -92,6 +95,28 @@ button{
     --ring: 0 0% 3.9%;
  
     --radius: 0.5rem;
+
+    --background-color: #050209;
+    --text-color: #efe7f5;
+    --text-glow: #6524cd;
+    --text-muted: #efe7f5;
+    --button-color: #6524cd;
+    --button-hover-color: #6f3c8e;
+    --button-text-color: #efe7f5;
+    --card-color: #190933;
+    --card-shadow: #9255b8;
+  }
+
+  .vesper{
+    --background-color: #101010;
+    --text-color: #FFFFE9;
+    --text-glow: #FFC278;
+    --text-muted: #938E8D;
+    --button-color: #FFC278;
+    --button-hover-color: #f1bf81;
+    --button-text-color: #101010;
+    --card-color: #1E1E1E;
+    --card-shadow: #FFC278;
   }
  
   .dark {
@@ -124,11 +149,4 @@ button{
  
     --ring: 0 0% 83.1%;
   }
-}
- 
-@layer base {
-  * {
-    @apply border-border;
-  }
- 
 }

@@ -30,19 +30,19 @@ const removeQuote = (quote: Quote) => {
 
 </script>
 <template>
-  <div class="bg-russian_violet-500 shadow-md shadow-african_violet-400 rounded-lg p-6 flex flex-col gap-2">
+  <div class="bg-card-base shadow-md shadow-[var(--card-shadow)] rounded-lg p-6 flex flex-col gap-2">
     <h2 class="text-xl font-medium leading-normal font-pt-mono">
       {{ quote.content }}
     </h2>
     <div class="flex justify-between items-center">
-      <span>
+      <span class="text-skin-faded">
         - {{ quote.author }}
       </span>
       <span class="flex gap-2 items-center">
         <button class="p-1 bg-transparent hover:bg-red-700" @click="removeQuote(quote)">
           <v-icon name="md-delete-outlined" scale="1.5" />
         </button>
-        <button @click="copyQuote(quote)" class="bg-transparent p-1" :class="copied && 'bg-emerald-800'">
+        <button @click="copyQuote(quote)" class="bg-transparent p-1 hover:bg-transparent">
           <template v-if="copied">
             <v-icon name="bi-check-lg" scale="1.5" />
 

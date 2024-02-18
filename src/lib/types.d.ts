@@ -8,3 +8,5 @@ type Quote = {
   dateAdded: string;
   dateModified: string;
 };
+
+type Theme = "default" | "vesper" | "solarized";
