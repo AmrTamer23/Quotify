@@ -33,7 +33,7 @@ const copyQuote = () => {
 
 const saveQuote = (quote: Quote) => {
   if (!savedQuotesStore.savedQuotes.find(q => q._id === quote._id))
-    savedQuotesStore.addQuote(quote);
+    savedQuotesStore.add(quote);
   toast({
     title: 'Quote Saved!',
     variant: 'default',
@@ -84,6 +84,5 @@ refreshQuote();
       </button>
       <Toaster />
     </div>
-
   </main>
 </template>
