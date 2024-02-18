@@ -1,4 +1,3 @@
-import { Quote } from "../types";
 import { instance } from "./instance";
 
 export const getRandomQuote = async (): Promise<Quote> => {
