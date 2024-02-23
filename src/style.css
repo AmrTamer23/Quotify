@@ -120,6 +120,20 @@ button{
     --card-color: #1E1E1E;
     --card-shadow: #FFC278;
   }
+
+  .solarized {
+    --background-color: #002B36;
+    --text-color: #268BD2;
+    --text-glow: #B2C8D8;
+    --text-muted: var(--text-glow);
+    --text-theme-switch: var(--button-text-color);
+    --button-color: #a83d0f;
+    --button-hover-color: #a52060;
+    --button-text-color: #fdf6e3;
+    --card-color: #073642;
+    --card-shadow: #b58900;
+}
+
  
   .dark {
     --background: 0 0% 3.9%;
