@@ -62,8 +62,8 @@ refreshQuote();
           Save
         </span>
       </button>
-      <button @click="refreshQuote">
-        <v-icon name="gi-perspective-dice-six-faces-three" scale="2" animation="ring" hover />
+      <button @click="refreshQuote" class="group/randBtn">
+        <v-icon name="gi-perspective-dice-six-faces-three" scale="2" class="group-hover/randBtn:animate-spin" />
         <span class="hidden lg:block">
           Randomize
         </span>
