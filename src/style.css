@@ -100,6 +100,7 @@ button{
     --text-color: #efe7f5;
     --text-glow: #6524cd;
     --text-muted: #efe7f5;
+    --text-theme-switch: var(--text-color);
     --button-color: #6524cd;
     --button-hover-color: #6f3c8e;
     --button-text-color: #efe7f5;
@@ -112,6 +113,7 @@ button{
     --text-color: #FFFFE9;
     --text-glow: #FFC278;
     --text-muted: #938E8D;
+    --text-theme-switch: var(--background-color);
     --button-color: #FFC278;
     --button-hover-color: #f1bf81;
     --button-text-color: #101010;

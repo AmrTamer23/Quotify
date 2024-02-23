@@ -41,6 +41,7 @@ module.exports = {
         },
         button: {
           base: "var(--button-text-color)",
+          themeSwitcher: "var(--text-theme-switch)",
         },
       },
       colors: {

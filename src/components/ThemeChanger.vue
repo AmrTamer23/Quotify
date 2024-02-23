@@ -5,20 +5,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
-import { useThemeStore } from '@/stores/theme'
-
+import { useThemeStore, setTheme } from '@/stores/theme'
 const themeStore = useThemeStore()
-
-const changeTheme = (theme: Theme) => {
-  themeStore.change(theme)
-  const html = document.getElementsByTagName('html')[0];
-  html.classList.value = theme;
-}
-const setThemeOnMount = () => {
-  const html = document.getElementsByTagName('html')[0];
-  html.classList.value = themeStore.theme;
-}
-setThemeOnMount()
+setTheme(themeStore.theme)
 </script>
 
 <template>
@@ -30,14 +19,14 @@ setThemeOnMount()
     </DropdownMenuTrigger>
     <DropdownMenuContent class="w-56 mx-4 bg-card-base p-0">
       <div class="flex flex-col gap-2 p-4">
-        <button class="p-2 rounded-md" :class="themeStore.theme === 'default' && 'text-skin-base bg-button-base'"
-          name="default" @click="changeTheme('default')">
+        <button class="p-2 rounded-md text-button-themeSwitcher" name="default" @click="themeStore.change('default')"
+          @mouseenter="themeStore.changeOnHover('default')" @mouseleave="themeStore.changeOnHoverOut()">
           <span>
             Default
           </span>
         </button>
-        <button class="p-2 rounded-md" :class="themeStore.theme === 'default' && 'text-skin-base bg-button-base'"
-          name="vesper" @click="changeTheme('vesper')">
+        <button class="p-2 rounded-md text-button-themeSwitcher" name="vesper" @click="themeStore.change('vesper')"
+          @mouseenter="themeStore.changeOnHover('vesper')" @mouseleave="themeStore.changeOnHoverOut()">
           <span>
             Vesper
           </span>
